@@ -2,6 +2,7 @@ import sys
 
 GROUP_SIZE = 3
 
+
 def main():
     badge_group = set()
     elfs_group = 0
@@ -18,12 +19,12 @@ def main():
             else:
                 badge_group = badge_group.intersection(set(line))
 
-            if elfs_group == GROUP_SIZE-1:
+            if elfs_group == GROUP_SIZE - 1:
                 for common_item in badge_group:
                     base_to_subtract = ord("A") if common_item.isupper() else ord("a")
                     base_to_add = 27 if common_item.isupper() else 1
                     total_priority += base_to_add + ord(common_item) - base_to_subtract
-            
+
             elfs_group = (elfs_group + 1) % GROUP_SIZE
 
     print(total_priority)

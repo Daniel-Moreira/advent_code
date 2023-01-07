@@ -1,5 +1,6 @@
 import sys
 
+
 def main():
     total_priority = 0
 

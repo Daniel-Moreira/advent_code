@@ -1,22 +1,23 @@
 import sys
 
 SHAPE_POINTS = {
-    "A": 1, 
-    "B": 2, 
+    "A": 1,
+    "B": 2,
     "C": 3,
 }
 
 WIN_SHAPES = {
     "A": "B",
-    "B": "C", 
+    "B": "C",
     "C": "A",
 }
 
 LOSING_SHAPES = {
     "A": "C",
-    "B": "A", 
+    "B": "A",
     "C": "B",
 }
+
 
 def main():
     total_score = 0
@@ -26,7 +27,7 @@ def main():
     print(sys.argv[0])
     with open(file_name, "r") as file:
         for line in file:
-            opponent_shape, round_play = line.strip().split(' ')
+            opponent_shape, round_play = line.strip().split(" ")
 
             # Should lose
             if round_play == "X":

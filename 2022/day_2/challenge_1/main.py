@@ -1,22 +1,23 @@
 import sys
 
 SHAPE_POINTS = {
-    "X": 1, 
-    "Y": 2, 
+    "X": 1,
+    "Y": 2,
     "Z": 3,
 }
 
 SHAPES_MAP = {
     "X": "A",
-    "Y": "B", 
+    "Y": "B",
     "Z": "C",
 }
 
 WIN_SHAPES = {
     "A": "Y",
-    "B": "Z", 
+    "B": "Z",
     "C": "X",
 }
+
 
 def main():
     total_score = 0
@@ -26,7 +27,7 @@ def main():
     print(sys.argv[0])
     with open(file_name, "r") as file:
         for line in file:
-            opponent_shape, shape_selected = line.strip().split(' ')
+            opponent_shape, shape_selected = line.strip().split(" ")
 
             if opponent_shape == SHAPES_MAP[shape_selected]:
                 total_score += 3

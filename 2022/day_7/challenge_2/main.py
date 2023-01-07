@@ -8,6 +8,7 @@ from command.commands import MoveCommand, ListCommand
 SPACE_AVAILABLE = 70000000
 FREE_SPACE_REQUIRED = 30000000
 
+
 def main():
     file_name = sys.argv[1]
     head = Node(NodeTypes.DIRECTORY, None)
@@ -37,7 +38,7 @@ def main():
     nodes_found = tree.find_directories_by_size(SPACE_AVAILABLE)
 
     used_space = tree.head.size
-    missing_space = SPACE_AVAILABLE - used_space 
+    missing_space = SPACE_AVAILABLE - used_space
     space_needed = FREE_SPACE_REQUIRED - missing_space
 
     nodes_found = sorted(nodes_found, key=lambda node: node.size)

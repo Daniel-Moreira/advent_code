@@ -1,11 +1,11 @@
-import bisect 
+import bisect
 
 AMOUNT_OF_LOOKUP_ELFS = 3
 
 top_elfs = []
 total_callories = 0
 
-with open('input.txt', 'r') as file:
+with open("input.txt", "r") as file:
     for i in range(AMOUNT_OF_LOOKUP_ELFS):
         top_elfs.append(0)
 
@@ -19,12 +19,12 @@ with open('input.txt', 'r') as file:
             #  Remove the lowest value item from the list
             if len(top_elfs) > AMOUNT_OF_LOOKUP_ELFS:
                 top_elfs.pop(0)
-            
+
             total_callories = 0
             continue
 
         num = int(line)
-             
+
         total_callories += num
 
 print(sum(top_elfs))
