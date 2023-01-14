@@ -1,16 +1,17 @@
 import sys
 
-# Lets take two integers mods: if n mod x = a and n mod y = b => n mod x * y = c. 
+# Lets take two integers mods: if n mod x = a and n mod y = b => n mod x * y = c.
 # Therefore n = c + x*y*k for some integer k. Given these one can replace the mods by:
 # n mod x = a
 # (c + x*y*k) mod x = a
-# (c mod x + x*y*k mod x) mod x = a 
+# (c mod x + x*y*k mod x) mod x = a
 # (c mod x + 0) mod x = a => since the remainder of x times something by x is always zero
 # (c mod x) mod x = a
 # c mod x = a
 # From these is possible to state that c mod x = a and c mod y = b.
-# Given the statement above one can simplify the challenge by passing the remainder of the item number 
-# by the product of the test integers.  
+# Given the statement above one can simplify the challenge by passing the remainder of the item number
+# by the product of the test integers.
+
 
 class Monkey:
     items: list[int]
