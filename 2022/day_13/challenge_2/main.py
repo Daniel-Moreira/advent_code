@@ -1,5 +1,6 @@
 from functools import cmp_to_key
 import sys
+import bisect
 from typing import Any
 
 
@@ -29,7 +30,7 @@ def compare_lists(v_1: list, v_2: list) -> int:
 
 
 def compare_integers(v_1: int, v_2: int) -> bool:
-    return v_2 - v_1
+    return v_1 - v_2
 
 
 def read_input(input):
@@ -75,10 +76,17 @@ def main():
         for packet in DIVIDER_PACKETS:
             all_lists.append(packet)
 
-        all_lists.sort(key=cmp_to_key(compare_lists), reverse=True)
+        all_lists.sort(key=cmp_to_key(compare_lists))
         decoder_key = 1
         for packet in DIVIDER_PACKETS:
-            packet_idx = all_lists.index(packet) + 1
+            packet_idx = (
+                bisect.bisect_left(
+                    all_lists,
+                    cmp_to_key(compare_lists)(packet),
+                    key=cmp_to_key(compare_lists),
+                )
+                + 1
+            )
             decoder_key *= packet_idx
 
         print(decoder_key)
