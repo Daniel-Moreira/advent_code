@@ -8,8 +8,8 @@
       "name": "Python: Arquivo Atual",
       "type": "python",
       "request": "launch",
-      "program": "day_15/challenge_2/main.py",
-      "args": ["day_15/challenge_2/input.txt"],
+      "program": "challenge_1/main.py",
+      "args": ["challenge_1/test.txt"],
       "console": "integratedTerminal",
       "justMyCode": true
     }
